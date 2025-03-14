@@ -21,4 +21,9 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('userAuth/',include('userAuth.urls')),
+    path('dj-rest-auth/login/', include('dj_rest_auth.urls')),  # Authentication endpoints
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),  # Registration endpoints
+
+    # Social Authentication (Use allauth instead of social_urls)
+    path('accounts/', include('allauth.urls')),  # Required for social login
 ]
