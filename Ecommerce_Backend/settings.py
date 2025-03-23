@@ -1,14 +1,15 @@
 import os
 from pathlib import Path
+from decouple import config  # Import `config` from `python-decouple`
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'your-secret-key'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -144,8 +145,8 @@ SOCIALACCOUNT_PROVIDERS = {
         },
         'OAUTH_PKCE_ENABLED': True,
         'APP': {
-            'client_id': 'your-google-client-id',
-            'secret': 'your-google-client-secret',
+            'client_id': config('GOOGLE_OAUTH_CLIENT_ID'),
+            'secret': config('GOOGLE_OAUTH_CLIENT_SECRET'),
             'key': ''
         }
     }
