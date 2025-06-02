@@ -134,7 +134,8 @@ REST_USE_JWT = True
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Frontend URL
+    "http://localhost:3000",
+    "https://miniamazone.vercel.app/"  # Frontend URL
 ]
 
 # Social account providers
