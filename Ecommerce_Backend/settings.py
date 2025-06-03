@@ -137,7 +137,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://miniamazone.vercel.app/"  # Frontend URL
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True
 # Social account providers
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
